@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/divider_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/new_fixture_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/inner_margin"
+                android:layout_marginTop="56dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/new_fixture"
+                android:textSize="40sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/home_away_text_view"
+                app:layout_constraintEnd_toStartOf="@id/home_away_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/home_away_text_view" />
+
+            <TextView
+                android:id="@+id/home_away_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@string/home_or_away"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/new_fixture_text_view" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/home_away_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/home_away_text_view"
+                app:layout_constraintTop_toTopOf="@+id/home_away_text_view" />
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/home_away_text_view"
+                android:layout_marginStart="@dimen/inner_margin"
+                android:layout_marginTop="24dp">
+
+                <RadioButton
+                    android:id="@+id/homeRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/home"
+                    app:layout_constraintStart_toStartOf="@id/radio_group"
+                    app:layout_constraintTop_toTopOf="@+id/radio_group" />
+
+                <RadioButton
+                    android:id="@+id/awayRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:text="@string/away"
+                    app:layout_constraintStart_toStartOf="@+id/radio_group"
+                    app:layout_constraintTop_toBottomOf="@+id/homeRadioButton" />
+
+            </RadioGroup>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/opponent_text_view"
+                app:layout_constraintEnd_toStartOf="@id/opponent_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/opponent_text_view" />
+
+            <TextView
+                android:id="@+id/opponent_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@string/opponent"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/radio_group" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/opponent_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/opponent_text_view"
+                app:layout_constraintTop_toTopOf="@+id/opponent_text_view" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/opponent_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/inner_margin"
+                android:hint="@string/opponent_name"
+                android:textColorHint="@color/colorTextSecondary"
+                app:boxBackgroundColor="@color/colorEditTextBg"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/opponent_text_view"
+                android:layout_marginTop="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/opponent_edit_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/colorTextPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/venue_text_view"
+                app:layout_constraintEnd_toStartOf="@id/venue_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/venue_text_view" />
+
+            <TextView
+                android:id="@+id/venue_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@string/venue"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/opponent_text_input" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/venue_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/venue_text_view"
+                app:layout_constraintTop_toTopOf="@+id/venue_text_view" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/venue_text_input"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/inner_margin"
+                android:hint="@string/venue_name"
+                android:textColorHint="@color/colorTextSecondary"
+                app:boxBackgroundColor="@color/colorEditTextBg"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/venue_text_view"
+                android:layout_marginTop="24dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/venue_edit_text_field"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/colorTextPrimary" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/date_time_text_view"
+                app:layout_constraintEnd_toStartOf="@id/date_time_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/date_time_text_view" />
+
+            <TextView
+                android:id="@+id/date_time_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="64dp"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@string/date_and_time"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/venue_text_input" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/date_time_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/date_time_text_view"
+                app:layout_constraintTop_toTopOf="@+id/date_time_text_view" />
+
+
+            <TextView
+                android:id="@+id/date_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/inner_margin"
+                android:layout_marginTop="24dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="8dp"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/date_time_text_view"
+                tools:text="Wed, 12 June 2019" />
+
+            <TextView
+                android:id="@+id/time_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/inner_margin"
+                android:background="?android:attr/selectableItemBackground"
+                android:fontFamily="sans-serif-condensed"
+                android:padding="8dp"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/date_text_view"
+                tools:text="20:00" />
+
+
+            <Button
+                android:id="@+id/cancel_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/cancel"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                app:layout_constraintBottom_toBottomOf="@+id/save_button"
+                app:layout_constraintEnd_toStartOf="@+id/save_button" />
+
+            <Button
+                android:id="@+id/save_button"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="@dimen/bottom_scroll_margin"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="@string/save"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/date_text_view" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

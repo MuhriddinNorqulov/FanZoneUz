@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorBackground"
+        app:liftOnScroll="true">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/divider_margin"
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
+
+            <TextView
+                android:id="@+id/date_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/inner_margin"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:textSize="32sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Tue, 25 June 2019" />
+
+            <ImageView
+                android:id="@+id/time_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                android:src="@drawable/ic_time"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/date_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/date_text_view"
+                tools:text="20:00" />
+
+            <TextView
+                android:id="@+id/time_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/inner_margin"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/time_image_view"
+                app:layout_constraintStart_toEndOf="@+id/time_image_view"
+                app:layout_constraintTop_toTopOf="@+id/time_image_view"
+                tools:text="20:00" />
+
+
+            <ImageView
+                android:id="@+id/venue_image_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="sans-serif-condensed"
+                android:src="@drawable/ic_location"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@+id/date_text_view"
+                app:layout_constraintTop_toBottomOf="@+id/time_text_view"
+                tools:text="20:00" />
+
+            <TextView
+                android:id="@+id/venue_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/inner_margin"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/venue_image_view"
+                app:layout_constraintStart_toEndOf="@+id/venue_image_view"
+                app:layout_constraintTop_toTopOf="@+id/venue_image_view"
+                tools:text="Tottenham Hotspur Stadium" />
+
+
+            <TextView
+                android:id="@+id/home_team_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/inner_margin"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/score_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/score_text_view"
+                tools:text="@string/dummy_team" />
+
+            <TextView
+                android:id="@+id/score_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/content_margin"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="40sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/venue_image_view"
+                tools:text="2 : 1" />
+
+            <TextView
+                android:id="@+id/away_team_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/inner_margin"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@id/score_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/score_text_view"
+                tools:text="@string/dummy_opponent_1" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/goals_text_view"
+                app:layout_constraintEnd_toStartOf="@id/goals_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/goals_text_view" />
+
+            <TextView
+                android:id="@+id/goals_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/content_margin"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@string/goals"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/score_text_view" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/goals_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/goals_text_view"
+                app:layout_constraintTop_toTopOf="@+id/goals_text_view" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/goals_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/goals_text_view"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_player_stat" />
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginEnd="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/assists_text_view"
+                app:layout_constraintEnd_toStartOf="@id/assists_text_view"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/assists_text_view" />
+
+            <TextView
+                android:id="@+id/assists_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/content_margin"
+                android:fontFamily="sans-serif-condensed-light"
+                android:text="@string/assists"
+                android:textColor="@color/colorTextSecondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/goals_recycler_view" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="@dimen/divider_margin"
+                android:background="@color/colorTextSecondary"
+                app:layout_constraintBottom_toBottomOf="@+id/assists_text_view"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/assists_text_view"
+                app:layout_constraintTop_toTopOf="@+id/assists_text_view" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/assists_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/assists_text_view"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_player_stat" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

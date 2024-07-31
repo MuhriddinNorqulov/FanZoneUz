@@ -1,0 +1,35 @@
+<resources>
+
+    <style name="CustomFab" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="tint">@android:color/white</item>
+        <item name="android:layout_gravity">bottom|right</item>
+        <item name="srcCompat">@drawable/ic_add</item>
+        <item name="android:layout_margin">16dp</item>
+    </style>
+
+    <!-- Style for tab text. -->
+    <style name="CustomTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">@color/colorTextSecondary</item>
+        <item name="android:fontFamily">sans-serif-condensed-medium</item>
+    </style>
+
+    <style name="CustomTextDialog" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="AlertDialog.TitleText" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="AlertDialog.BodyText" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="fontFamily">sans-serif-condensed-medium</item>
+        <item name="android:textSize">32sp</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="AlertDialog.ButtonBar" parent="Theme.MaterialComponents.Dialog">
+        <item name="android:padding">4dp</item>
+    </style>
+
+
+</resources>

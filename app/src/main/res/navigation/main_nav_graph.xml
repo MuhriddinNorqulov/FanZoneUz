@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/hubFragment">
+
+    <fragment
+        android:id="@+id/hubFragment"
+        android:name="com.tuit.pcfqizilqum.hub.HubFragment"
+        android:label="@string/title_hub"
+        tools:layout="@layout/fragment_hub" >
+        <action
+            android:id="@+id/action_hubFragment_to_fixtureDetailsFragment"
+            app:destination="@id/fixtureDetailsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+        <action
+            android:id="@+id/action_hubFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fixturesFragment"
+        android:name="com.tuit.pcfqizilqum.fixtures.FixturesFragment"
+        android:label="@string/title_fixtures"
+        tools:layout="@layout/fragment_fixtures" >
+        <action
+            android:id="@+id/action_fixturesFragment_to_fixtureDetailsFragment"
+            app:destination="@id/fixtureDetailsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+        <action
+            android:id="@+id/action_fixturesFragment_to_newFixtureFragment"
+            app:destination="@id/newFixtureFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+        <action
+            android:id="@+id/action_fixturesFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/statsFragment"
+        android:name="com.tuit.pcfqizilqum.stats.StatsFragment"
+        android:label="@string/title_stats"
+        tools:layout="@layout/fragment_stats" >
+        <action
+            android:id="@+id/action_statsFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+        <action
+            android:id="@+id/action_statsFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="com.tuit.pcfqizilqum.team.TeamFragment"
+        android:label="@string/title_team"
+        tools:layout="@layout/fragment_team" >
+        <action
+            android:id="@+id/action_teamFragment_to_playerDetailsFragment"
+            app:destination="@id/playerDetailsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+        <action
+            android:id="@+id/action_teamFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment"
+            app:enterAnim="@anim/open_enter"
+            app:exitAnim="@anim/close_exit"
+            app:popEnterAnim="@anim/open_enter"
+            app:popExitAnim="@anim/close_exit" />
+    </fragment>
+    <fragment
+        android:id="@+id/fixtureDetailsFragment"
+        android:name="com.tuit.pcfqizilqum.fixtures.FixtureDetailsFragment"
+        android:label="FixtureDetailsFragment"
+        tools:layout="@layout/fragment_fixture_details">
+        <action
+            android:id="@+id/action_fixtureDetailsFragment_to_editFixtureFragment"
+            app:destination="@id/editFixtureFragment" />
+        <argument
+            android:name="fixtureId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerDetailsFragment"
+        android:name="com.tuit.pcfqizilqum.team.PlayerDetailsFragment"
+        android:label="PlayerDetailsFragment"
+        tools:layout="@layout/fragment_player_details">
+        <argument
+            android:name="player"
+            app:argType="com.tuit.pcfqizilqum.data.Player" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editFixtureFragment"
+        android:name="com.tuit.pcfqizilqum.fixtures.EditFixtureFragment"
+        android:label="EditFixtureFragment"
+        tools:layout="@layout/fragment_fixture_edit">
+        <argument
+            android:name="fixtureId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/newFixtureFragment"
+        android:name="com.tuit.pcfqizilqum.fixtures.NewFixtureFragment"
+        android:label="NewFixtureFragment"
+        tools:layout="@layout/fragment_fixture_new"/>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.tuit.pcfqizilqum.SettingsFragment"
+        android:label="SettingsFragment"
+        tools:layout="@layout/fragment_settings"/>
+
+</navigation>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/hubFragment"
+        android:contentDescription="@string/title_hub"
+        android:icon="@drawable/hub_selector"
+        android:title="@string/title_hub" />
+
+    <item
+        android:id="@+id/fixturesFragment"
+        android:contentDescription="@string/title_fixtures"
+        android:icon="@drawable/fixtures_selector"
+        android:title="@string/title_fixtures" />
+
+    <item
+        android:id="@+id/statsFragment"
+        android:contentDescription="@string/title_stats"
+        android:icon="@drawable/stats_selector"
+        android:title="@string/title_stats" />
+
+    <item
+        android:id="@+id/teamFragment"
+        android:contentDescription="@string/title_team"
+        android:icon="@drawable/team_selector"
+        android:title="@string/title_team" />
+
+</menu>
